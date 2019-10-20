@@ -1,6 +1,7 @@
 package cn.uyun.util;
 
 import okhttp3.*;
+import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Component;
@@ -15,7 +16,6 @@ import java.util.concurrent.TimeUnit;
  */
 @Component
 public class OKHttpTools {
-
     private static final Logger LOGGER = LoggerFactory.getLogger(OKHttpTools.class);
     private OkHttpClient.Builder builder = new OkHttpClient().newBuilder().readTimeout(10, TimeUnit.SECONDS);
 
@@ -30,6 +30,11 @@ public class OKHttpTools {
                 for (String key : set) {
                     String val = headers.get(key).toString();
                     requestBuilder.addHeader(key, val);
+                }
+            }else{
+                if("POST".equals(type) && StringUtils.isNoneBlank(data)){
+                    headers = new HashMap();
+                    headers.put("Content-Type", "application/json");
                 }
             }
             if(type == null || "GET".equals(type.toUpperCase())){
