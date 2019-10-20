@@ -1,0 +1,10 @@
+spring:
+  profiles:
+    active: smart
+
+config:
+  ###################高性能登陆节点相关配置#######################
+  gxn-log-url: http://10.40.140.33:6080/user/login.action?userName=viewer&password=111111
+  gxn-metric-url: http://10.40.140.33:6080/monitor/getMetricByCategory.action?resources=[11241122031]&metricName=
+  gv-token: OzSBLmLbGPXR0kWccMmFLA==
+  login-node: http://master.cma.cn/home/api/getNodeInfoGd/system02

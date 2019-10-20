@@ -1,0 +1,45 @@
+<assembly
+		xmlns="http://maven.apache.org/plugins/maven-assembly-plugin/assembly/1.1.2"
+		xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		xsi:schemaLocation="http://maven.apache.org/plugins/maven-assembly-plugin/assembly/1.1.2 http://maven.apache.org/xsd/assembly-1.1.2.xsd">
+	<id>bin</id>
+	<includeBaseDirectory>true</includeBaseDirectory>
+	<!--输出格式为OMP安装需要的tar.gz-->
+	<formats>
+		<format>tar.gz</format>
+	</formats>
+
+	<dependencySets>
+		<dependencySet>
+			<useProjectArtifact>false</useProjectArtifact>
+			<outputDirectory>master.buzz.system.monitor/qxj.art</outputDirectory>
+			<includes>
+				<include>qxj.art:zip</include>
+			</includes>
+			<unpack>true</unpack>
+			<scope>runtime</scope>
+            <fileMode>0740</fileMode>
+        </dependencySet>
+
+
+		<dependencySet>
+			<useProjectArtifact>false</useProjectArtifact>
+			<outputDirectory>.</outputDirectory>
+			<includes>
+				<include>uyun.soft:util-shell:tar.gz</include>
+			</includes>
+			<unpack>true</unpack>
+			<scope>runtime</scope>
+			<fileMode>0740</fileMode>
+		</dependencySet>
+	</dependencySets>
+
+	<fileSets>
+		<fileSet>
+			<directory>resources</directory>
+			<lineEnding>unix</lineEnding>
+			<outputDirectory>.</outputDirectory>
+			<fileMode>0740</fileMode>
+		</fileSet>
+	</fileSets>
+</assembly>

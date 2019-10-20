@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>uyun.omp</groupId>
+	<artifactId>build</artifactId>
+    <packaging>pom</packaging>
+    <version>0.0.1-SNAPSHOT</version>
+	<name>build</name>
+
+
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+		<java.version>1.8</java.version>
+
+        <package.module.groupId>cn.uyun</package.module.groupId>
+        <package.module.artifactId>rest.controller</package.module.artifactId>
+        <package.module.version>1.0-SNAPSHOT</package.module.version>
+	</properties>
+
+	<dependencies>
+        <!--需要依赖的工具包-->
+        <dependency>
+            <groupId>uyun.soft</groupId>
+            <artifactId>util-shell</artifactId>
+            <version>1.0.4</version>
+            <type>tar.gz</type>
+        </dependency>
+        <!--模块Zip包-->
+        <dependency>
+            <groupId>${package.module.groupId}</groupId>
+            <artifactId>${package.module.artifactId}</artifactId>
+            <version>${package.module.version}</version>
+            <classifier>bin</classifier>
+            <type>tar.gz</type>
+        </dependency>
+	</dependencies>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+			</plugin>
+		</plugins>
+	</build>
+    <profiles>
+        <profile>
+            <id>deploy</id>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-assembly-plugin</artifactId>
+                        <version>2.6</version>
+                        <executions>
+                            <execution>
+                                <id>build-bin</id>
+                                <phase>package</phase>
+                                <goals>
+                                    <goal>single</goal>
+                                </goals>
+                                <configuration>
+                                    <descriptors>
+                                        <descriptor>assembly.xml</descriptor>
+                                    </descriptors>
+                                    <outputDirectory>target</outputDirectory>
+                                    <appendAssemblyId>false</appendAssemblyId>
+                                </configuration>
+                            </execution>
+                        </executions>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+    </profiles>
+
+    <distributionManagement>
+        <snapshotRepository>
+            <id>uyun-snapshot</id>
+            <name>UYUN Snapshot Repository</name>
+            <url>http://www.uyunsoft.cn/nexus/content/repositories/snapshot</url>
+        </snapshotRepository>
+    </distributionManagement>
+</project>
