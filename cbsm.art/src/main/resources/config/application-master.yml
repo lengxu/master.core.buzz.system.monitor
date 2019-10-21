@@ -9,10 +9,10 @@ spring:
 
 config:
   #天镜uyun推送告警地址
-  alert-url: http://master.cma.cn/store/openapi/v2/logs/push_batch?apikey=e10adc3949ba59abbe56e057f2gg88dd
+  alert-url: http://master.cma.cn1/store/openapi/v2/logs/push_batch?apikey=e10adc3949ba59abbe56e057f2gg88dd
 
   music-url: http://master.cma.cn/store/openapi/v2/datapoints/query?apikey=e10adc3949ba59abbe56e057f2gg88dd
 
   #mcp接口
-  mcp_co_url: http://smart-view.nmic.cma/mcp/openapi/v2/queryCOStationFileInfo?apikey=e10adc3949ba59abbe56e057f20f88dd
-  mcp_id_url: http://smart-view.nmic.cma/mcp/openapi/v2/queryIDStationFileInfo?apikey=e10adc3949ba59abbe56e057f20f88dd
+  mcp_co_url: http://master.cma.cn/mcp/openapi/v2/queryCOStationFileInfo?apikey=e10adc3949ba59abbe56e057f20f88dd
+  mcp_id_url: http://master.cma.cn/mcp/openapi/v2/queryIDStationFileInfo?apikey=e10adc3949ba59abbe56e057f20f88dd

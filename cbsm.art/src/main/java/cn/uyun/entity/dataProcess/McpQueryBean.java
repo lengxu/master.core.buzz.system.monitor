@@ -16,16 +16,13 @@ public class McpQueryBean {
     private String dpc;
     private String sod;
     private String time;
+    private String destination;
 
-    public McpQueryBean(String cts, String dpc, String sod, String time) {
+    public McpQueryBean(String cts, String dpc, String sod, String time, String destination) {
         this.cts = cts;
         this.dpc = dpc;
         this.sod = sod;
         this.time = time;
-    }
-
-    public static void main(String[] args) {
-        McpQueryBean mcpQueryBean = new McpQueryBean("", "", "", "");
-        System.out.println("id_state："+mcpQueryBean.id_state);
+        this.destination = destination;
     }
 }

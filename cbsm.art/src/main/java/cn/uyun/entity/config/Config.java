@@ -94,4 +94,6 @@ public class Config {
     private String mcpCoUrl;
 
     private String mcpIdUrl;
+
+    private String mcpDestination;
 }

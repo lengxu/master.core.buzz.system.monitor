@@ -1,8 +1,7 @@
 spring:
   elasticsearch:
     jest:
-#      uris: http://10.40.132.140:9211  #大数据平台
-      uris: http://10.40.132.121:9210   #天镜es5
+      uris: http://10.40.132.140:9211  #大数据平台
       read-timeout: 30000
       connection-timeout: 30000
       multi-threaded: true
@@ -12,3 +11,8 @@ config:
   alert-url: http://smart-view.nmic.cma1/store/openapi/v2/logs/push_batch?apikey=e10adc3949ba59abbe56e057f2gg88dd
 
   music-url: http://master.cma.cn/store/openapi/v2/datapoints/query?apikey=e10adc3949ba59abbe56e057f2gg88dd
+
+  #mcp接口
+  mcp_co_url: http://smart-view.nmic.cma/mcp/openapi/v2/queryCOStationFileInfo?apikey=e10adc3949ba59abbe56e057f20f88dd
+  mcp_id_url: http://smart-view.nmic.cma/mcp/openapi/v2/queryIDStationFileInfo?apikey=e10adc3949ba59abbe56e057f20f88dd
+  mcp_destination: FIDB

@@ -23,7 +23,7 @@ public class ProductInfo {
         hourList.add(fileBean);
         hourList.add(fileBean1);
         fileBeanMap.put("hour", hourList);
-        ProductResultBean productResultBeanHour = new ProductResultBean("A.0042.0003.R001", "A.0042.0003.P001", "A.0042.0003.S001", "SURF_CMPA_FAST_5KM", "小时降水（快速）", "小时", "1", 2, fileBeanMap);
+        ProductResultBean productResultBeanHour = new ProductResultBean("A.0042.0003.R001", "A.0042.0003.P001", "A.0042.0003.S001", "SURF_CMPA_FAST_5KM", "小时降水（快速）", 0, "1", 2, fileBeanMap);
         productResultBeans.add(productResultBeanHour);
 
         //日采集入库数据（日降水快速）
@@ -36,7 +36,7 @@ public class ProductInfo {
         PMList.add(fileBean3);
         fileBeanMap1.put("AM", AMList);
         fileBeanMap1.put("PM", PMList);
-        ProductResultBean productResultBeanDay = new ProductResultBean("A.0042.0004.R001", "A.0042.0004.P001", "A.0042.0004.S001", "SURF_CMPA_FAST_5KM_DAY", "日降水（快速）", "日", "08", 2, fileBeanMap1);
+        ProductResultBean productResultBeanDay = new ProductResultBean("A.0042.0004.R001", "A.0042.0004.P001", "A.0042.0004.S001", "SURF_CMPA_FAST_5KM_DAY", "日降水（快速）", 3, "08", 2, fileBeanMap1);
         productResultBeans.add(productResultBeanDay);
 
         //小时采集入库数据（小时降水实时）
@@ -47,7 +47,7 @@ public class ProductInfo {
         hourList.add(fileBean);
         hourList.add(fileBean1);
         fileBeanMap.put("hour", hourList);
-        productResultBeanHour = new ProductResultBean("A.0042.0005.R001", "A.0042.0005.P001", "A.0042.0005.S001", "SURF_CMPA_FRT_5KM", "小时降水（实时）", "小时", "1", 2, fileBeanMap);
+        productResultBeanHour = new ProductResultBean("A.0042.0005.R001", "A.0042.0005.P001", "A.0042.0005.S001", "SURF_CMPA_FRT_5KM", "小时降水（实时）", 0, "1", 2, fileBeanMap);
         productResultBeans.add(productResultBeanHour);
 
         //日采集入库数据（日降水实时）
@@ -62,7 +62,7 @@ public class ProductInfo {
         fileBeanMap1.put("PM", PMList);
         fileBeanMap1.put("AM", AMList);
         fileBeanMap1.put("PM", PMList);
-        productResultBeanDay = new ProductResultBean("A.0042.0006.R001", "A.0042.0006.P001", "A.0042.0006.S001", "SURF_CMPA_FRT_5KM_DAY", "日降水（实时）", "日", "08", 2, fileBeanMap1);
+        productResultBeanDay = new ProductResultBean("A.0042.0006.R001", "A.0042.0006.P001", "A.0042.0006.S001", "SURF_CMPA_FRT_5KM_DAY", "日降水（实时）", 3, "08", 2, fileBeanMap1);
         productResultBeans.add(productResultBeanDay);
 
 
@@ -74,7 +74,7 @@ public class ProductInfo {
         minuteList.add(fileBean4);
         minuteList.add(fileBean5);
         fileBeanMap2.put("minute", minuteList);
-        ProductResultBean productResultBeanMintus = new ProductResultBean("A.0042.0007.R001", "A.0042.0007.P001", "A.0042.0007.S001", "SURF_CMPA_FRT_5KM_10MIN", "10分钟降水", "分钟", "1", 2, fileBeanMap2);
+        ProductResultBean productResultBeanMintus = new ProductResultBean("A.0042.0007.R001", "A.0042.0007.P001", "A.0042.0007.S001", "SURF_CMPA_FRT_5KM_10MIN", "10分钟降水", 5, "1", 2, fileBeanMap2);
         productResultBeans.add(productResultBeanMintus);
 
 
@@ -92,7 +92,7 @@ public class ProductInfo {
         hourList.add(fileBean7);
         hourList.add(fileBean8);
         fileBeanMap.put("hour", hourList);
-        productResultBeanHour = new ProductResultBean("F.0035.0003.R001", "F.0035.0003.P001", "F.0035.0003.S001", "NAFP_CLDAS2.0_RT_GRB", "小时地面要素", "小时", "1", 5, fileBeanMap);
+        productResultBeanHour = new ProductResultBean("F.0035.0003.R001", "F.0035.0003.P001", "F.0035.0003.S001", "NAFP_CLDAS2.0_RT_GRB", "小时地面要素", 0, "1", 5, fileBeanMap);
         productResultBeans.add(productResultBeanHour);
 
         //日采集入库数据（日地面要素）
@@ -121,7 +121,7 @@ public class ProductInfo {
         PMList.add(fileBean17);
         fileBeanMap1.put("AM", AMList);
         fileBeanMap1.put("PM", PMList);
-        productResultBeanDay = new ProductResultBean("F.0035.0004.R001", "F.0035.0004.P001", "F.0035.0004.S001", "NAFP_CLDAS2.0_RT_5KM_DAY_GRB", "日地面要素", "日", "08", 10, fileBeanMap1);
+        productResultBeanDay = new ProductResultBean("F.0035.0004.R001", "F.0035.0004.P001", "F.0035.0004.S001", "NAFP_CLDAS2.0_RT_5KM_DAY_GRB", "日地面要素", 3, "08", 10, fileBeanMap1);
         productResultBeans.add(productResultBeanDay);
 
 
@@ -131,7 +131,7 @@ public class ProductInfo {
         hourList = new ArrayList<FileBean>();
         hourList.add(fileBean);
         fileBeanMap.put("hour", hourList);
-        productResultBeanHour = new ProductResultBean("F.0043.0002.R001", "F.0043.0002.P001", "F.0043.0002.S001", "NAFP_3DCloudA_GRIB2", "小时三维要素", "小时", "1", 1, fileBeanMap);
+        productResultBeanHour = new ProductResultBean("F.0043.0002.R001", "F.0043.0002.P001", "F.0043.0002.S001", "NAFP_3DCloudA_GRIB2", "小时三维要素", 0, "1", 1, fileBeanMap);
         productResultBeans.add(productResultBeanHour);
 
         //全球海表温度
@@ -144,7 +144,7 @@ public class ProductInfo {
         AMList.add(fileBean9);
         AMList.add(fileBean10);
         fileBeanMap1.put("AM", AMList);
-        productResultBeanDay = new ProductResultBean("C.0011.0001.R001", "C.0011.0001.P001", "C.0011.0001.S001", "OCEN_PRODUCT_PART1_FILE", "全球海表温度", "日", "10", 3, fileBeanMap1);
+        productResultBeanDay = new ProductResultBean("C.0011.0001.R001", "C.0011.0001.P001", "C.0011.0001.S001", "OCEN_PRODUCT_PART1_FILE", "全球海表温度", 2, "10", 3, fileBeanMap1);
         productResultBeans.add(productResultBeanDay);
 
         //全球海冰
@@ -153,7 +153,7 @@ public class ProductInfo {
         AMList = new ArrayList<FileBean>();
         AMList.add(fileBean2);
         fileBeanMap1.put("AM", AMList);
-        productResultBeanDay = new ProductResultBean("C.0011.0002.R001", "C.0011.0002.P001", "C.0011.0002.S001", "OCEN_PRODUCT_PART1_FILE", "海冰密集度", "日", "8", 1, fileBeanMap1);
+        productResultBeanDay = new ProductResultBean("C.0011.0002.R001", "C.0011.0002.P001", "C.0011.0002.S001", "OCEN_PRODUCT_PART1_FILE", "海冰密集度", 1, "8", 1, fileBeanMap1);
         productResultBeans.add(productResultBeanDay);
     }
 
@@ -164,17 +164,17 @@ public class ProductInfo {
     * int i=3 每天10时
     * int i=4 每天早晚8点
     * */
-    public HashMap<String, String[]> getViewTimeList(int i){
-        if(i == 0){
-            String[] hourList = new String[]{"00:00", "01:00", "02:00", "03:00", "04:00", "05:00", "06:00", "07:00", "08:00", "09:00", "10:00", "11:00", "12:00", "13:00", "14:00", "15:00", "16:00", "17:00", "18:00", "19:00", "20:00", "21:00", "22:00", "23:00"};
-        }else if(i == 1){
-
-        }else if(i == 2){
-
-        }else if(i == 3){
-
-        }else if(i == 4){
-
-        }
-    }
+//    public HashMap<String, String[]> getViewTimeList(int i){
+//        if(i == 0){
+//            String[] hourList = new String[]{"00:00", "01:00", "02:00", "03:00", "04:00", "05:00", "06:00", "07:00", "08:00", "09:00", "10:00", "11:00", "12:00", "13:00", "14:00", "15:00", "16:00", "17:00", "18:00", "19:00", "20:00", "21:00", "22:00", "23:00"};
+//        }else if(i == 1){
+//
+//        }else if(i == 2){
+//
+//        }else if(i == 3){
+//
+//        }else if(i == 4){
+//
+//        }
+//    }
 }

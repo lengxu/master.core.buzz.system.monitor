@@ -1,6 +1,6 @@
 package cn.uyun.service.schedule;
 
-import cn.uyun.service.product.ProductService;
+import cn.uyun.service.product.ProductServiceAbs;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,9 +19,9 @@ public class Client {
 	private static ExecutorService newCachedThreadPool = Executors.newCachedThreadPool();
 
 	@Autowired
-	private ProductService productServiceImpl;
+	private ProductServiceAbs productServiceAbs;
 
-	@Scheduled(cron = "0 */3 * * * ?")
+	@Scheduled(cron = "0 */2 * * * ?")
 	public void queryDataProcess() {
 		LOGGER.debug("开始获取数据全流程的数据!");
 		try {
@@ -29,9 +29,9 @@ public class Client {
 				@Override
 				public void run() {
 					long startTime = System.currentTimeMillis();
-					productServiceImpl.queryProductData("Cre");
-					productServiceImpl.queryProductData("CO");
-					productServiceImpl.queryProductData("DI");
+					productServiceAbs.queryProductData("Cre");
+					productServiceAbs.queryProductData("CO");
+					productServiceAbs.queryProductData("DI");
 					long endTime = System.currentTimeMillis();
 					LOGGER.info("处理数据全流程数据共耗时：" + (endTime - startTime) + " 毫秒");
 				}
